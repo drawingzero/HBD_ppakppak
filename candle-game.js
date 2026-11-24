@@ -58,7 +58,7 @@
       '<div class="meter-caption"><span id="zone-progress">0 / ' + config.centers.length + '곳 성공</span><span id="candle-remaining">남은 촛불 ' + (3 - index) + '개</span></div>' +
       '<button type="button" class="primary blow" id="blow-button" data-act="blow"' + (timed && timed.expired ? ' hidden disabled' : '') + '>후~ 불기 <span class="key-tag">SPACE</span></button>' +
       '<p class="candle-result" id="candle-result" aria-live="polite"' + (timed && timed.expired ? ' hidden' : '') + '>빗나가면 지금 단계의 표시만 초기화돼요.</p>' +
-      (timed ? '<section class="candle-timeout" id="candle-timeout" aria-labelledby="candle-timeout-question"' + (timed.expired ? '' : ' hidden') + '><h3 id="candle-timeout-question" tabindex="-1">혹시 빡치셨나요? ^___^ 그냥 다음으로 넘어갈래?</h3><div class="candle-timeout-actions"><button type="button" data-act="candle-give-up">응 나는 하남자야</button><button type="button" class="primary" data-act="candle-retry">아니 그래도 해볼래</button></div></section>' : '') +
+      (timed ? '<section class="candle-timeout" id="candle-timeout" aria-labelledby="candle-timeout-question"' + (timed.expired ? '' : ' hidden') + '><h3 id="candle-timeout-question" tabindex="-1">혹시 짜증났나요?^___^ 그냥 다음으로 넘어갈 기회를 줄까?</h3><div class="candle-timeout-actions"><button type="button" data-act="candle-give-up">웅ㅠㅠ 규석곤듀 못하겠오</button><button type="button" class="primary" data-act="candle-retry">죽어도 해낸다</button></div></section>' : '') +
       '</div>';
   }
 

@@ -481,7 +481,7 @@
       case 'pickup':
         if(state.stage!==3||!state.phoneDropped||state.phone)break;
         state.phone=true;discoveryItem='phone';render();sound('item');
-        talk([['규석','DJ 다다가 떨어뜨린 휴대폰을 주웠다!']],()=>{discoveryItem='';render();say('규석','다다의 휴대폰을 살펴보자.');});break;
+        talk([['규석','DJ 다다가 떨어뜨린 휴대폰을 주웠다!']],()=>{discoveryItem='';render();say('규석','다다의 휴대폰을 살펴보자. 뭔가 있을지도.');});break;
       case 'phone': openPhone(); break;
       case 'phone-home': openPhoneHome(); break;
       case 'open-lights': openEqualizer(); break;

@@ -18,7 +18,7 @@
   const wrap = (body, cls) => '<div class="phone-screen ' + cls + '">' + status() + body + '<div class="phone-home-indicator" aria-hidden="true"></div></div>';
   const close = () => '<button type="button" class="phone-dismiss" data-act="close">폰 내려놓기</button>';
   const colors = ['#fa818e', '#f7d96d', '#73dfb2', '#80b8ff'];
-  const names = ['빨강', '노랑', '초록', '파랑'];
+  const names = ['R', 'Y', 'G', 'B'];
   function lock() {
     const letters = ['', '', 'ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQRS', 'TUV', 'WXYZ'];
     let keys = '';

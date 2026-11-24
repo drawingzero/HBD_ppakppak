@@ -426,7 +426,7 @@
   }
   function openPhoto() {
     if(!state.finished||!window.EndingPhoto)return;
-    openModal(top('26년 한규석 생파 기념사진','ONE MORE MEMORY · 11.25')+window.EndingPhoto.markup()+'<div class="modal-actions">'+btn('편지로 돌아가기','letter','','purple')+'</div><div class="letter-sound-controls"><button type="button" class="quiet" data-act="music-toggle" id="music-toggle" aria-pressed="false">BGM 켜기</button></div>','photo');
+    openModal(top('26년 한규석 생파 기념사진')+window.EndingPhoto.markup()+'<div class="modal-actions">'+btn('편지로 돌아가기','letter','','purple')+'</div><div class="letter-sound-controls"><button type="button" class="quiet" data-act="music-toggle" id="music-toggle" aria-pressed="false">BGM 켜기</button></div>','photo');
     updateMusicControls();
     window.EndingPhoto.start();
   }

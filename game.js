@@ -410,7 +410,7 @@
   function openLetter() {
     if (!state.finished||!state.letterReady) return;
     state.endingMusicStarted=true;save();
-    openModal(top('규석에게 도착한 편지','QUEST COMPLETE · HAPPY BIRTHDAY')+'<article class="letter"><h3>🎉 HAPPY BIRTHDAY 🎉</h3><p>빡빡아 안녕?</p> <p>휴 방금 전까지 내가 누나였는데 다시 동갑 됐네. 생일 축하해!</p><p>선물 없이 어떻게 생일을 축하 해줄 수 있을까, 난 받았지만 입을 싹 닫을까 고민하다가.. 나는 배운 사람이니까.. 그동안 쌓인 이야기들을 모아 짧은 게임을 만들어봤어. 잠깐이었지만 즐거운 시간 되었니? 이런 선물은 내가 1빠지?! 우하하</p><p>연락이 오는 건 싫지만 사실은 관종이라 축하 많이 받고 싶은 거 알아. 그러니 꼭 그런 하루가 되길 바랄게^___^ (나 잘 알지?) 장난이고, 오늘은 진짜로 누구보다 행복했으면 좋겠다! 생일 정말 정말 진심으로 축하해. 그럼 안뇽!</p><p class="signature">-2026년 11월 25일 다영이가-</p></article><div class="modal-actions">'+btn('단체사진 찍기','photo','','primary')+btn('파티장으로 돌아가기','close','','purple')+'</div><div class="letter-sound-controls"><button type="button" class="quiet" data-act="music-toggle" id="music-toggle" aria-pressed="false">음악 켜기</button></div>','letter');
+    openModal(top('규석에게 도착한 편지')+'<article class="letter"><h3>🎉 HAPPY BIRTHDAY 🎉</h3><p>빡빡아 안녕?</p> <p>휴 방금 전까지 내가 누나였는데 다시 동갑 됐네. 생일 축하해!</p><p>선물 없이 어떻게 생일을 축하 해줄 수 있을까, 난 받았지만 입을 싹 닫을까 고민하다가.. 나는 배운 사람이니까.. 그동안 쌓인 이야기들을 모아 짧은 게임을 만들어봤어. 잠깐이었지만 즐거운 시간 되었니? 이런 선물은 내가 1빠지?! 우하하</p><p>연락이 오는 건 싫지만 사실은 관종이라 축하 많이 받고 싶은 거 알아. 그러니 꼭 그런 하루가 되길 바랄게^___^ (나 잘 알지?) 장난이고, 오늘은 진짜로 누구보다 행복했으면 좋겠다! 생일 정말 정말 진심으로 축하해. 그럼 안뇽!</p><p class="signature">-2026년 11월 25일 다영이가-</p></article><div class="modal-actions">'+btn('단체사진 찍기','photo','','primary')+btn('파티장으로 돌아가기','close','','purple')+'</div><div class="letter-sound-controls"><button type="button" class="quiet" data-act="music-toggle" id="music-toggle" aria-pressed="false">음악 켜기</button></div>','letter');
     updateMusicControls();
     if(state.musicEnabled&&window.BirthdayMusic)window.BirthdayMusic.play();
   }

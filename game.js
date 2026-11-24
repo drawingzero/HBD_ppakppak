@@ -69,7 +69,7 @@
   function goal() {
     if (state.finished) return '케이크를 눌러 생일 편지를 읽어 보세요.';
     if (state.stage === 1) return state.doorOpen ? '우사기가 비켜줬다! 현관문을 열고 파티장으로 가자.' : state.snail ? '전보벌레로 우사기를 도와줄 사람에게 전화하자.' : '방 안을 살펴보고 밖으로 나갈 수 있는 방법을 찾아보자.';
-    if (state.stage === 2) return '아니 이런, 파티장 문이 굳게 닫혀 있다.';
+    if (state.stage === 2) return '아니 이런, 파티장 문이 잠겨 있잖아!';
     if (state.stage === 3) return !state.phoneDropped ? '어둠 속에서 다다의 목소리가 들린다.' : state.torchOn ? '손전등으로 방 안을 살펴보자.' : state.unlocked ? '휴대폰에 몇 가지 앱이 보인다.' : state.phone ? '작은 휴대폰 화면만 어둠 속에서 빛난다.' : '다다가 서 있던 자리에 무언가 반짝인다.';
     if (state.stage === 4) return state.revealed ? '특별 손님들의 인사를 받았다.' : !state.returned ? '다다가 무언가를 찾으며 두리번거린다.' : '낯선 손님들이 파티장에 와 있다. ('+state.vipOrder.length+'/6)';
     return '케이크 위에 작은 불꽃 세 개가 일렁인다. ('+state.candles+'/3)';

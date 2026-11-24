@@ -205,3 +205,22 @@ label.input-label{display:block;margin:0 0 8px;font-size:14px;color:#d2d9ea}
  .torch-tools{gap:6px}.torch-tools span{width:100%;font-size:14px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* 생일 편지 상단 제목 숨기기 */
+#modal-content:has(> .letter) > .modal-top > div {
+    display: none;
+}
+
+#modal-content:has(> .letter) > .modal-top {
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+/* 단체사진 상단 제목 숨기기 */
+#modal-content:has(> .ending-photo) > .modal-top > div {
+    display: none;
+}
+
+#modal-content:has(> .ending-photo) > .modal-top {
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}

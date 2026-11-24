@@ -28,9 +28,9 @@
   const titles = ['규석의 방','비밀 파티장 입구','불 꺼진 파티장','낯선 손님들의 파티','소원을 빌어 봐'];
   const people = {
     1:{name:'빈지노',label:'L씨',lyric:'대체 돈이 뭐지'},
-    2:{name:'카리나',label:'Y씨',lyric:'다음 레벨로 가려면 절대적 룰을 지켜'},
+    2:{name:'카리나',label:'Y씨',lyric:'다음 레벨로 가고싶어? 절대적 룰을 지켜'},
     3:{name:'김진호',label:'K씨',lyric:'아무도 내 말을 안 들어주네... 나 혼자 말하고 나 혼자 듣는 말...'},
-    4:{name:'슬기',label:'K씨',lyric:'배고파요 주세요 달콤한 그 맛 아이스크림 케이크'},
+    4:{name:'슬기',label:'K씨',lyric:'배고파요. 주세요. 달콤한 그 맛 아이스크림 케이크'},
     5:{name:'조휴일',label:'J씨',lyric:'으휴 이 91년생 어린 양들아'},
     6:{name:'TOP',label:'C씨',lyric:'아이 손 시려. 핫팩 주머니 속에 꼬깃 꼬깃'}
   };
@@ -225,7 +225,7 @@
   }
   function partyGreeting() {
     partyIntro='greeting';render();
-    talk([['DJ 다다','야! 어서와! 파티장 불은 내가 껐어 우헤헤!',null,'다음']],runDada);
+    talk([['DJ 다다','어서와! 파티장 불은 내가 껐어 우헤헤!',null,'다음']],runDada);
   }
   function runDada() {
     if(state.stage!==3||state.phoneDropped)return;
@@ -301,7 +301,7 @@
       say('규석','열렸다. 다다의 휴대폰이다.');
       openPhoneHome();
     } else {
-      sound('error');$('phone-error').textContent='❌ 틀렸쥬?';
+      sound('error');$('phone-error').textContent='❌ 땡!';
       input.value='';
       if(window.PhoneUI.updatePin)window.PhoneUI.updatePin('');
     }
@@ -316,7 +316,7 @@
     if (state.stage!==4) return;
     if (state.revealed) return enterStage(5);
     if (!state.returned) return say('DJ 다다','내 핸드폰 어디있지...?\n(두리번 두리번)',[['핸드폰 돌려주기','return-phone','','primary'],['안 돌려주기','keep-phone']]);
-    say('DJ 다다','뭐야, 뭘 해야 할지 모르겠다고? 힌트 줄까?',[['네!! 제가 뭘 하면 될깝쇼!!','dj-hint'],['네!! 힌트 좀 주십쇼 형님!!','dj-hint'],['네!! 납작 엎드립니다 알려주세요!!','dj-hint']]);
+    say('DJ 다다','왜애? 뭘 해야 할지 모르겠어? 힌트 줄까?',[['네!! 제가 뭘 하면 될깝쇼!!','dj-hint'],['네!! 힌트 좀 주십쇼 형님!!','dj-hint'],['네!! 납작 엎드립니다 알려주세요!!','dj-hint']]);
   }
   function openVIP(id) {
     if (state.stage!==4) return;
@@ -511,13 +511,13 @@
         } else {sound('error');$('eq-error').textContent='❌ 레벨 불일치!';} break;
       case 'dj': visitDJ(); break;
       case 'return-phone':
-        state.returned=true; render(); say('DJ 다다','고마워~ 내가 널 위해 특별 손님들을 모셔왔어! 가서 얘기해 봐!'); break;
+        state.returned=true; render(); say('DJ 다다','고마워~ 내가 한규석 널 위해 특별 손님들을 모셔왔어! 가서 얘기해 봐!'); break;
       case 'keep-phone':
         if(state.stage===4&&!state.returned)bonkPlayer();break;
       case 'dj-hint':
         if(state.stage!==4||!state.returned||state.revealed)break;
         state.djHintHeard=true;save();
-        say('DJ 다다','오늘은 너 생일이니까 내가 선심 쓴다. 선배님부터 찾아 뵙도록 해'); break;
+        say('DJ 다다','오늘은 너 생일이니까 내가 선심 쓴다. 선배님부터 찾아 뵙도록 해.'); break;
       case 'vip': openVIP(Number(value)); break;
       case 'extra': {
         if(state.stage<4||!extras[Number(value)])break;

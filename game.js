@@ -276,7 +276,7 @@
   function serveRice(withSanji=true) {
     const lines=[
       ['시스템','(잠시 후 상디가 나타나 김이 모락모락 나는 황금 볶음밥을 건넸다!)',()=>{state.foodReceived=true;render();sound('item');}],
-      ['우사기','우라!! 야하~!! ✨',()=>{
+      ['우사기','이야아아아아아아앗!!!!!✨',()=>{
         state.doorOpen=true;bunnyMoving=true;render();
         later(()=>{bunnyMoving=false;const bunny=$('objects').querySelector('.bunny-leaving');if(bunny)bunny.classList.remove('bunny-leaving');},800);
       }]

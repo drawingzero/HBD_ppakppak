@@ -14,7 +14,7 @@
     close: '<path d="m6 6 12 12M18 6 6 18"/>'
   };
   const icon = name => '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + (glyphs[name] || glyphs.bulb) + '</svg>';
-  const status = () => '<div class="phone-status"><span>09:41</span><span class="phone-island" aria-hidden="true"><i></i></span><span class="phone-status-icons">' + icon('signal') + icon('wifi') + icon('battery') + '</span></div>';
+  const status = () => '<div class="phone-status"><span>19:91</span><span class="phone-island" aria-hidden="true"><i></i></span><span class="phone-status-icons">' + icon('signal') + icon('wifi') + icon('battery') + '</span></div>';
   const wrap = (body, cls) => '<div class="phone-screen ' + cls + '">' + status() + body + '<div class="phone-home-indicator" aria-hidden="true"></div></div>';
   const close = () => '<button type="button" class="phone-dismiss" data-act="close">폰 내려놓기</button>';
   const colors = ['#fa818e', '#f7d96d', '#73dfb2', '#80b8ff'];

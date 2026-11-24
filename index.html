@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#fff7f0">
+  <meta name="description" content="규석을 위한 작은 생일 방탈출. 방을 살펴보고, 비밀 파티를 찾아 마지막 편지를 열어 보세요.">
+  <title>규석의 생일파티</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23151a30'/%3E%3Cpath d='M6 15h20v12H6z' fill='%23b7a3ff'/%3E%3Cpath d='M6 15h20v5H6z' fill='%23f7f0e9'/%3E%3Cpath d='M15 8h3v7h-3z' fill='%237be1c2'/%3E%3Cpath d='M15 3h3v4h-3z' fill='%23ffce70'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="phone.css?v=6">
+  <link rel="stylesheet" href="movement.css?v=6">
+  <link rel="stylesheet" href="story-effects.css?v=7">
+  <link rel="stylesheet" href="candle-game.css?v=6">
+  <link rel="stylesheet" href="ending-photo.css?v=6">
+  <link rel="stylesheet" href="party-theme.css?v=6">
+  <link rel="stylesheet" href="bonk-effect.css?v=6">
+  <script src="art.js?v=7" defer></script>
+  <script src="phone-ui.js?v=6" defer></script>
+  <script src="movement.js?v=6" defer></script>
+  <script src="music-box.js?v=6" defer></script>
+  <script src="sound-effects.js?v=7" defer></script>
+  <script src="candle-game.js?v=7" defer></script>
+  <script src="ending-photo.js?v=8" defer></script>
+  <script src="bonk-effect.js?v=6" defer></script>
+  <script src="game.js?v=12" defer></script>
+</head>
+<body>
+  <main class="game-shell">
+    <section class="stage-heading">
+      <h1 id="stage-title"></h1>
+      <ol class="progress" aria-label="게임 진행" id="progress"></ol>
+    </section>
+    <section class="board" id="board" aria-label="게임 공간">
+      <div id="background" class="background" aria-hidden="true"></div>
+      <div id="objects" class="objects"></div>
+      <div class="party-confetti" id="party-confetti" aria-hidden="true" hidden></div>
+      <div id="shade" class="shade" aria-hidden="true"></div>
+    </section>
+    <div class="play-tools">
+      <div id="inventory" class="inventory" aria-label="소지품"></div>
+    </div>
+    <section class="dialogue" aria-label="대화">
+      <div class="portrait" id="portrait" aria-hidden="true"></div>
+      <div class="dialogue-body"><p class="speaker" id="speaker"></p><p class="dialogue-text" id="dialogue-text" aria-live="polite"></p><div class="dialogue-actions" id="dialogue-actions"></div></div>
+    </section>
+    <footer><span>바닥 클릭으로 이동 · 방향키 / WASD · E로 조사</span><div><button type="button" data-act="sound" id="sound" class="text-button" aria-pressed="true">효과음 켜짐</button><button type="button" data-act="music-toggle" id="music-footer-toggle" class="text-button" aria-pressed="false" hidden>BGM 켜기</button><span id="saved">이 기기에 자동 저장</span><button data-act="reset" class="text-button">처음부터</button></div></footer>
+  </main>
+  <dialog id="modal" aria-label="게임 메뉴"><div id="modal-content"></div></dialog>
+</body>
+</html>

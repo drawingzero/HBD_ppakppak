@@ -1,0 +1,21 @@
+/* This localized effect sits above scenery without moving the whole board. */
+.bonk-overlay{position:absolute;inset:0;z-index:1700;pointer-events:none;overflow:hidden;isolation:isolate}
+.bonk-rig{position:absolute;width:0;height:0;transform-origin:0 0}
+.bonk-hammer{position:absolute;transform-origin:50% 91.071429%;transform:rotate(8deg);opacity:0;will-change:transform,opacity;filter:drop-shadow(2px 4px 0 #5b354b36)}
+.bonk-hammer svg{display:block;width:100%;height:100%;overflow:visible}
+.bonk-swing{animation:bonk-hammer-swing 1.08s linear both}
+.bonk-sparks{position:absolute;width:calc(110px * var(--bonk-scale,1));height:calc(76px * var(--bonk-scale,1));transform:translate(-50%,-82%);opacity:0;--bonk-scale:1}
+.bonk-impact .bonk-sparks{animation:bonk-star-burst .64s ease-out both}
+.bonk-star{position:absolute;display:block;width:calc(22px * var(--bonk-scale,1));height:calc(22px * var(--bonk-scale,1));filter:drop-shadow(1px 2px 0 #74476032)}
+.bonk-star svg{display:block;width:100%;height:100%}
+.bonk-star-one{left:1%;top:45%;transform:rotate(-18deg)}
+.bonk-star-two{left:41%;top:0;transform:rotate(12deg)}
+.bonk-star-three{right:1%;top:40%;transform:rotate(27deg)}
+.bonk-word{position:absolute;left:50%;top:29%;transform:translateX(-50%) rotate(-9deg);color:#fff7c8;font:900 calc(23px * var(--bonk-scale,1))/1.1 system-ui,"Malgun Gothic",sans-serif;white-space:nowrap;-webkit-text-stroke:3px #8a4c67;paint-order:stroke fill;text-shadow:1px 3px 0 #aa6b7b50}
+.walker.bonk-reacting .walker-figure{animation:bonk-player-squash .39s ease-out both;transform-origin:50% 90%}
+.bonk-reduced .bonk-hammer{transform:rotate(-55deg);opacity:1}
+.bonk-reduced.bonk-impact .bonk-sparks{animation:none;opacity:1}
+@keyframes bonk-hammer-swing{0%{transform:rotate(8deg);opacity:0}8%{transform:rotate(8deg);opacity:1}21%{transform:rotate(26deg)}36.1%{transform:rotate(-55deg)}41.6%{transform:rotate(-48deg)}68%{transform:rotate(8deg);opacity:1}100%{transform:rotate(18deg);opacity:0}}
+@keyframes bonk-player-squash{0%,100%{transform:scaleX(var(--walk-direction,1)) scaleY(1)}20%{transform:scaleX(calc(var(--walk-direction,1) * 1.16)) scaleY(.78)}56%{transform:scaleX(calc(var(--walk-direction,1) * .95)) scaleY(1.05)}}
+@keyframes bonk-star-burst{0%{opacity:0;transform:translate(-50%,-65%) scale(.55)}16%{opacity:1;transform:translate(-50%,-82%) scale(1.13)}44%{opacity:1;transform:translate(-50%,-87%) scale(1)}80%{opacity:1}100%{opacity:0;transform:translate(-50%,-110%) scale(.96)}}
+@media(prefers-reduced-motion:reduce){.bonk-hammer,.bonk-sparks,.walker.bonk-reacting .walker-figure{animation:none!important}.bonk-reduced.bonk-impact .bonk-sparks{opacity:1}}

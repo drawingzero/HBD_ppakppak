@@ -1,0 +1,95 @@
+/* The transparent target covers the actual final flame, not a visible skip UI. */
+.candle-secret-flame,
+.candle-secret-flame:hover,
+.candle-secret-flame:active {
+  position: absolute;
+  z-index: 2;
+  top: -40px;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+  transform: translateX(-50%);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.candle-secret-flame:focus-visible {
+  outline: 2px dashed var(--yellow, #ffdc79);
+  outline-offset: 2px;
+}
+.candle.off .candle-secret-flame {
+  pointer-events: none;
+}
+.candle-challenge-clock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 14px 0 0;
+  padding: 9px 13px;
+  border: 1px solid #d8bfd0;
+  border-radius: 6px;
+  background: #fffaf5;
+  color: #403446;
+}
+.candle-challenge-clock > span {
+  color: #6e5b76;
+  font-size: 13px;
+}
+.candle-challenge-clock strong {
+  font: 800 20px/1.3 ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+.candle-challenge-clock.is-urgent {
+  border-color: #a8514d;
+}
+.candle-challenge-clock.is-urgent strong {
+  color: #9a373a;
+}
+.candle-timeout {
+  margin: 18px 0 0;
+  padding: 18px 16px;
+  border: 2px solid #d9a7bf;
+  border-radius: 8px;
+  background: #fffaf5;
+  color: #403446;
+}
+.candle-timeout h3 {
+  margin: 0 0 15px;
+  color: #403446;
+  font-size: 17px;
+  line-height: 1.65;
+  word-break: keep-all;
+}
+.candle-timeout h3:focus-visible {
+  outline: 2px dashed #a6789c;
+  outline-offset: 5px;
+}
+.candle-timeout-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.candle-timeout-actions button {
+  padding: 12px 10px;
+  font-size: 14px;
+  line-height: 1.55;
+  word-break: keep-all;
+}
+.candle-game .blow[hidden],
+.candle-game .candle-result[hidden],
+.candle-timeout[hidden] {
+  display: none;
+}
+@media (max-width: 480px) {
+  .candle-timeout-actions {
+    grid-template-columns: 1fr;
+  }
+}

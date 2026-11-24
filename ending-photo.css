@@ -1,0 +1,20 @@
+.ending-photo{max-width:580px;margin:0 auto;text-align:center}
+.ending-photo-frame{position:relative;padding:5px;margin:20px auto 0;transform:rotate(-.7deg);transition:transform .3s ease;filter:drop-shadow(0 8px 6px #080d213d)}
+.ending-photo-window{position:relative;overflow:hidden;border-radius:3px;box-shadow:0 0 0 1px #faf4e3,0 3px 0 #b5a9ad;background:#f8f2e7}
+.ending-photo-window img{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none}
+.ending-photo.is-counting .ending-photo-frame{transform:rotate(0)}
+.ending-photo.is-counting .ending-photo-window img{filter:saturate(.85)}
+.photo-tape{position:absolute;z-index:2;top:-8px;width:76px;height:24px;background:#d5b5dfb3;border:1px solid #f0d8f055;box-shadow:0 1px 0 #2a1f3f11;pointer-events:none}
+.photo-tape-left{left:10%;transform:rotate(-16deg)}
+.photo-tape-right{right:10%;transform:rotate(14deg)}
+.photo-countdown{position:absolute;top:36%;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:80px;height:80px;border:2px solid #fff9de;border-radius:50%;background:#252440c9;color:#fff6da;text-shadow:3px 3px 0 #14192a;font:800 49px/1 ui-monospace,monospace;box-shadow:0 3px 18px #15132966}
+.photo-countdown[hidden]{display:none}
+.photo-shutter{position:absolute;inset:0;background:#fff8db;opacity:0;pointer-events:none}
+.ending-photo.shutter .photo-shutter{animation:photo-soft-shutter .4s ease-out}
+.photo-status{margin:18px 0 14px;min-height:42px;color:#cdd7e6;font-size:14px;line-height:1.6;word-break:keep-all}
+.ending-photo-actions{display:flex;justify-content:center;gap:10px}
+.ending-photo-actions button{min-height:43px;padding:9px 18px;font-size:14px}
+.ending-photo-actions .primary{min-width:155px}
+@keyframes photo-soft-shutter{0%{opacity:.28}100%{opacity:0}}
+@media(max-width:650px){.ending-photo-frame{margin-top:15px;padding:3px}.photo-tape{width:54px;height:19px;top:-6px}.photo-countdown{width:58px;height:58px;font-size:35px}.photo-status{font-size:13px;margin:15px 0 11px;min-height:41px}.ending-photo-actions{gap:7px}.ending-photo-actions button{padding:9px 12px}.ending-photo-actions .primary{min-width:142px}}
+@media(prefers-reduced-motion:reduce){.ending-photo-frame{transform:none!important;transition:none}.ending-photo.shutter .photo-shutter{animation:none}}

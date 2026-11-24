@@ -1,0 +1,60 @@
+/* A brighter birthday palette. This file is intentionally loaded last. */
+:root{color-scheme:light;--bg:#fff7f0;--panel:#fffaf5;--ink:#403446;--muted:#78657f;--purple:#c6a5e2;--mint:#a9e2ce;--yellow:#f6cb77;--edge:#bda4c6}
+html{background:#fff7f0}
+body{color:#403446;background:radial-gradient(ellipse at 8% 0,#ffe5e8 0,transparent 48%),radial-gradient(ellipse at 95% 20%,#eee2f6 0,transparent 48%),#fff7f0}
+.brand{color:#826b88}.brand b{color:#5e416d}.brand-mark{background:#f1bfd5;color:#653f6a;box-shadow:4px 4px 0 #d7b9d4;border:1px solid #c69abf}
+.edition,footer{color:#816b88}.eyebrow{color:#8b4c82}.welcome .eyebrow{color:#427d6b}.welcome h2 span{color:#a25184}
+.game-shell button:not(.object):not(.text-button),#modal:not([data-mode="phone"]) button:not(.candle-secret-flame){background:#f5e9f6;color:#543d61;border-color:#bca1c5;box-shadow:0 3px 0 #d9c1df}
+.game-shell button:not(.object):not(.text-button):hover,#modal:not([data-mode="phone"]) button:not(.candle-secret-flame):hover{background:#ead8ee}
+.game-shell button.primary,#modal:not([data-mode="phone"]) button.primary{background:#ace5d0;color:#25483f;border-color:#83bba8;box-shadow:0 3px 0 #9cc8b7}
+.game-shell button.primary:hover,#modal:not([data-mode="phone"]) button.primary:hover{background:#c2efde}
+.game-shell button.purple,#modal:not([data-mode="phone"]) button.purple{background:#efbed6;color:#643c65;border-color:#c99cbd;box-shadow:0 3px 0 #d5accb}
+.game-shell button.purple:hover,#modal:not([data-mode="phone"]) button.purple:hover{background:#f5d1e2}
+.game-shell button.quiet,.game-shell button.small,#modal:not([data-mode="phone"]) button.small{box-shadow:none;background:#fffaf6;border-color:#ccb5d1;color:#6b4d75}
+.game-shell button.text-button{background:transparent;color:#805187;border:0;box-shadow:none}
+.game-shell button:focus-visible,#modal:not([data-mode="phone"]) button:focus-visible,#modal:not([data-mode="phone"]) input:focus-visible{outline-color:#954e8e}
+.progress li{background:#f5edf8;border-color:#cbb5d7;color:#8a7197}.progress .done{background:#d8efe3;border-color:#94bca6;color:#396e58}.progress .active{background:#e7c9ec;border-color:#b98abe;color:#67416d;box-shadow:0 0 0 3px #e7c9ec55}
+.quest-strip{background:#f6edf8;border-color:#c5aecf}.quest-strip p{color:#604b6b}.quest-mark{color:#9c783b}
+.board{background:#decbe8;border-color:#ad91bb;box-shadow:0 5px 0 #dcc7e2}
+/* Characters stay unobscured: the scene itself is recolored in art.js. */
+.board:not(.dark) .object .label{background:#fffaf1f2;color:#4c3b54;border-color:#a88bad;box-shadow:0 2px 0 #d3bad988}
+.board:not(.dark) .object .label.checked{color:#2d725a;border-color:#71a990;background:#f0fff5f2}
+.board:not(.dark) .object.character .label{background:#f4e9f2de;color:#634d70}
+.board:not(.dark) .walker-name{background:#ecfff3ed;color:#376b55;border-color:#91bba0;box-shadow:0 2px 0 #a9c3b566}
+.board:not(.dark) .walk-target{border-color:#538f79;background:#90d6b944}.board:not(.dark) .walk-target:after{border-color:#538f7977}
+.board.dark .object .label{background:#242038ef;color:#fff7fd;border-color:#9688aa}
+.dj-speech{background:#fff7df;color:#624960;border-color:#c3a4c9;box-shadow:3px 3px 0 #d0b0d366}.dj-speech:after{background:#fff7df;border-color:#c3a4c9}
+.inventory-label,.torch-tools span{color:#78657f}.inventory button{background:#fffaf6;border-color:#c5accf;color:#664c73}.empty-slot{border-color:#c8b0d0;color:#b49bbe}
+.dialogue{background:linear-gradient(120deg,#fffaf1,#fff6fc);border-color:#c8afd2;box-shadow:0 4px 0 #e4cfe6}
+.portrait,.portrait.group-portrait{background:#eee2f2;border-color:#c8b0d0}.speaker{color:#39735e}.dialogue-text{color:#4a3d51}
+/* Non-phone dialogs use warm light surfaces. The phone remains an actual dark OS. */
+#modal:not([data-mode="phone"]){background:#fffaf5;color:#403446;border-color:#c4a8d0;box-shadow:0 8px 0 #d4b7dc,0 25px 90px #6b4e6e33}
+#modal:not([data-mode="phone"])::backdrop{background:#4e3c655e;backdrop-filter:blur(4px)}
+#modal:not([data-mode="phone"]) .close{color:#76547e;background:#f0e1f2;border-color:#c6a9d2;box-shadow:none}
+#modal:not([data-mode="phone"]) .modal-copy{color:#69586f}.mini-note{color:#88728f}
+#modal:not([data-mode="phone"]) label.input-label{color:#6b5478}
+#modal:not([data-mode="phone"]) .code-row input{background:#fffefe;border-color:#baa0c6;color:#513b60}
+#modal:not([data-mode="phone"]) .error{color:#ad3e62}
+#modal:not([data-mode="phone"]) .hint-box{background:#f2e7f5;color:#624b69;border-color:#ddb360}
+.mirror-reaction{background:#f2e8f4;border-color:#ccb2d6;color:#5d456a}.mirror-reaction b{color:#3c7863}
+.lyric{background:#fff2d9;border-color:#ddc39f;color:#79563d}.status-label{color:#34715a}
+.note{background:#f6edf8;border-color:#cbb3d6}.note b{color:#89558e}.note p{color:#63516d}
+.help-list{color:#65556d}
+/* Acquisition cards and group portraits retain their distinct illustration colors. */
+.item-acquired{background:linear-gradient(150deg,#f4ffedfa,#e7f8effc);border-color:#8bbfa5;box-shadow:0 6px 0 #9fbca950,0 0 30px #b5d8bb55}
+.item-acquired-kicker{color:#8f7544}.item-acquired strong{color:#385b4b}.item-acquired-caption{color:#5b7a68}
+.item-acquired-art{filter:drop-shadow(0 3px 4px #79928233)}.item-acquired-rays{background:repeating-conic-gradient(from 5deg,#e6cb803e 0deg 13deg,transparent 13deg 33deg)}
+.letter{background:#fffaf0;color:#51434e;border-color:#d9b2d0}.letter h3{color:#925d87}.letter .signature{color:#8a5a83}
+.music-card{background:#f3e8f4;border-color:#cdb1d3;color:#73587d}.music-note{background:#ead7eb;color:#9a6b44}
+.photo-status{color:#6a5675}.photo-tape{background:#e2bdddba;border-color:#eacde6}.ending-photo-window{box-shadow:0 0 0 1px #fffaf0,0 3px 0 #cfb4ce}
+.ending-photo-frame{filter:drop-shadow(0 8px 6px #9c75a32c)}
+/* Keep the timing track dark and the target genuinely green for instant contrast. */
+.meter{background:#493b53;border-color:#a287ad}.target-zone{background:#28734f;border-color:#a5e8b4}.target-zone span{color:#f3fff0}.target-zone.hit{background:#73557f;border-color:#d6b5df}.target-zone.hit span{color:#f5e7ff}
+.moving-bar{background:#fffae5;box-shadow:0 0 9px #fff5b5}.meter-caption{color:#786481}.candle-result{color:#63516c}.candle-result.success{color:#2d7659}
+.candle-checks span{background:#f3e8f5;border-color:#b89bc3;color:#80678c}.candle-checks span.hit{background:#d7efdf;border-color:#78a58c;color:#2b6a50}
+.candle{border-color:#8d7099;box-shadow:4px 4px 0 #cdb7d6}
+.key-tag{border-color:#6e9f8766;color:#35624e}
+footer{flex-wrap:wrap;row-gap:8px}footer>div{flex-wrap:wrap;justify-content:flex-end}footer .text-button{font-size:12px;white-space:nowrap;padding:4px 0}
+#modal[data-mode="phone"]{color-scheme:dark;--ink:#f5f5ff;--muted:#b2b9ce;--purple:#b7a3ff;--mint:#83e2c5;--yellow:#ffd88c;--edge:#080e21;color:#f5f5ff}
+#modal[data-mode="phone"] .phone-error{color:#ffc3cd}
+@media(max-width:650px){.board{box-shadow:0 4px 0 #dcc7e2}.dialogue{box-shadow:0 3px 0 #e4cfe6}}

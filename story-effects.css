@@ -1,0 +1,63 @@
+/* Story beats stay visible above the room's darkness and walking layer. */
+.board{border-radius:8px}
+.letter-sound-controls{display:flex;justify-content:flex-end;margin-top:12px}
+.letter-sound-controls button{font-size:14px;background:transparent;box-shadow:none}
+.object.guest-grooving svg{animation:guest-grooves .8s ease-in-out 3}
+@keyframes guest-grooves{0%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-3px) rotate(-7deg)}75%{transform:translateY(-3px) rotate(7deg)}}
+.item-acquired{position:absolute;z-index:1450;top:16px;left:50%;transform:translateX(-50%);width:min(260px,74%);display:flex;flex-direction:column;align-items:center;gap:3px;padding:12px 18px 14px;border:2px solid #a9edd5;border-radius:12px;background:linear-gradient(160deg,#35415af5,#20273cf7);box-shadow:0 7px 0 #10192ab3,0 0 34px #a2e5be40;text-align:center;pointer-events:none;isolation:isolate;overflow:hidden;animation:item-arrives .48s cubic-bezier(.2,.9,.25,1.2) both}
+.item-acquired-kicker{font:800 11px/1.4 ui-monospace,monospace;letter-spacing:3px;color:#ffe4a9}
+.item-acquired-art{width:100px;height:94px;margin:2px 0;filter:drop-shadow(0 3px 6px #12162980);animation:item-floats 2.4s ease-in-out .5s infinite}
+.item-acquired-art svg{display:block;width:100%;height:100%}
+.item-acquired strong{font-size:17px;line-height:1.5;color:#f5ffe8;word-break:keep-all}
+.item-acquired-caption{font-size:12px;color:#bacfce}
+.item-acquired-rays{position:absolute;z-index:-1;top:-48px;left:50%;width:285px;height:285px;margin-left:-142.5px;background:repeating-conic-gradient(from 5deg,#bdebdc3d 0deg 13deg,transparent 13deg 33deg);mask-image:radial-gradient(circle,#000 0,transparent 67%);animation:item-rays 18s linear infinite}
+@keyframes item-arrives{0%{opacity:0;transform:translate(-50%,-18px) scale(.78)}70%{opacity:1;transform:translate(-50%,2px) scale(1.035)}100%{transform:translate(-50%,0) scale(1)}}
+@keyframes item-floats{50%{transform:translateY(-4px)}}
+@keyframes item-rays{to{transform:rotate(360deg)}}
+.rice-gift{position:absolute;left:71%;top:51%;width:clamp(40px,5vw,58px);z-index:650;transform:translate(-50%,-50%);pointer-events:none;animation:rice-appears .4s ease-out both}
+.rice-gift svg{display:block;width:100%;height:auto;filter:drop-shadow(0 3px 0 #27223855)}
+@keyframes rice-appears{from{opacity:0;transform:translate(-50%,-80%) scale(.6)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+.object.bunny-leaving{animation:usagi-moves-aside .8s ease-in-out both}
+.object.bunny-leaving svg{animation:usagi-hops .2s ease-in-out 4}
+@keyframes usagi-moves-aside{from{left:77%;top:39%}to{left:65%;top:47%}}
+@keyframes usagi-hops{50%{transform:translateY(-9px) rotate(-3deg)}}
+.object.dj-intro{z-index:1202!important;pointer-events:none!important}
+.object.dj-intro svg{filter:drop-shadow(0 0 9px #a59ccd55)}
+.object.dj-running{animation:dada-runs-away 1.25s ease-in forwards}
+.object.dj-running svg{animation:dada-running-steps .16s steps(2,end) infinite}
+@keyframes dada-runs-away{0%{top:54%}38%{top:35%}100%{top:-20%}}
+@keyframes dada-running-steps{0%,100%{transform:rotate(-6deg) translateY(0)}50%{transform:rotate(6deg) translateY(-5px)}}
+.object.phone-floor{min-width:82px;width:12%}
+.object.phone-floor svg{width:34px;filter:drop-shadow(0 0 6px #ffe7a5)}
+.object.phone-floor .label{font-size:12px;padding:2px 5px;margin-top:5px}
+.object.phone-dropping{animation:phone-falls .8s ease-out both}
+.object.phone-dropping svg{animation:phone-tumbles .8s ease-out both}
+@keyframes phone-falls{0%{top:37%}65%{top:57.5%}82%{top:53.5%}100%{top:56%}}
+@keyframes phone-tumbles{0%{transform:rotate(-20deg)}65%{transform:rotate(15deg)}100%{transform:rotate(0)}}
+.mirror-reaction{display:flex;align-items:center;gap:12px;padding:10px 12px;margin:0 0 17px;background:#171f34;border:1px solid #414d69;border-radius:6px;color:#e9e4f3;font-size:14px}
+.mirror-reaction svg{width:43px;height:43px;flex-shrink:0}
+.mirror-reaction b{display:block;color:var(--mint);font-size:12px;margin-bottom:2px}
+.note.note-person{display:flex;align-items:center;gap:12px}
+.note-person-art{flex:0 0 48px;width:48px;height:48px}
+.note-person-art svg{width:100%;height:100%}
+.portrait.group-portrait{width:128px;height:100px;flex-basis:128px;background:#2d354d}
+.portrait.group-portrait svg{width:120px;height:90px}
+.board.celebrating .guest-person svg,.board.celebrating .extra-guest svg,.board.celebrating .object[data-act="dj"] svg{animation:birthday-jump .72s cubic-bezier(.3,.1,.4,1) var(--cheer-delay,0s) infinite}
+.board.celebrating .walker-figure{animation:birthday-player-jump .72s cubic-bezier(.3,.1,.4,1) .15s infinite}
+@keyframes birthday-jump{0%,65%,100%{transform:translateY(0) scale(1)}24%{transform:translateY(-17px) scale(1.03,.98)}52%{transform:translateY(0) scale(1.04,.95)}}
+@keyframes birthday-player-jump{0%,65%,100%{transform:scaleX(var(--walk-direction)) translateY(0)}24%{transform:scaleX(var(--walk-direction)) translateY(-17px)}52%{transform:scaleX(var(--walk-direction)) translateY(0)}}
+.welcome .eyebrow:empty,.object.cake[data-act=""] .label{display:none}
+.party-confetti{position:absolute;inset:0;z-index:1180;overflow:hidden;pointer-events:none}
+.party-confetti i{position:absolute;left:var(--confetti-x);top:-8%;width:6px;height:10px;background:var(--confetti-color);animation:birthday-confetti 3.2s linear var(--confetti-delay) infinite}
+.party-confetti i:nth-child(3n){width:9px;height:5px}
+@keyframes birthday-confetti{0%{top:-8%;transform:translateX(0) rotate(0);opacity:0}12%,75%{opacity:1}100%{top:110%;transform:translateX(24px) rotate(290deg);opacity:0}}
+@media(max-width:650px){
+ .item-acquired{top:10px;width:min(234px,76%);padding:9px 14px 11px;gap:1px}.item-acquired-art{width:81px;height:77px}.item-acquired strong{font-size:15px}.item-acquired-caption{font-size:11px}.item-acquired-kicker{font-size:10px}
+ .rice-gift{width:36px}.object.phone-floor svg{width:27px}.object.phone-floor .label{font-size:10px}.object.phone-floor{min-width:70px}
+ .portrait.group-portrait{width:88px;height:72px;flex-basis:88px}.portrait.group-portrait svg{width:84px;height:63px}
+ .note-person-art{flex-basis:40px;width:40px;height:40px}.note.note-person{gap:9px}.mirror-reaction{padding:8px 9px;gap:9px;font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){
+ .item-acquired,.item-acquired-art,.item-acquired-rays,.rice-gift,.object.bunny-leaving,.object.bunny-leaving svg,.object.dj-running,.object.dj-running svg,.object.phone-dropping,.object.phone-dropping svg,.board.celebrating .guest-person svg,.board.celebrating .extra-guest svg,.board.celebrating .object[data-act="dj"] svg,.board.celebrating .walker-figure,.party-confetti i{animation:none}
+ .object.dj-running{top:-20%!important}.party-confetti i{display:none}
+}

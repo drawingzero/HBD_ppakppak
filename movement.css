@@ -1,0 +1,21 @@
+/* A persistent walking character sits at its feet coordinate. */
+.board.has-walker{cursor:crosshair;touch-action:manipulation}
+.board.has-walker .objects{z-index:auto;pointer-events:none}
+.board.has-walker .objects .object{pointer-events:auto}
+.board.has-walker .objects .object.character{display:none}
+.board.has-walker .shade{z-index:1200}
+.board.has-walker .object.is-glowing{z-index:1201!important}
+.board.has-walker .dj-speech{z-index:1150}
+.walker{position:absolute;width:clamp(50px,6.8vw,82px);height:clamp(50px,6.8vw,82px);transform:translate(-50%,-96%);pointer-events:none;--walk-direction:1;will-change:left,top}
+.walker-figure{position:relative;width:100%;height:100%;transform:scaleX(var(--walk-direction));transform-origin:50% 90%;filter:drop-shadow(0 2px 0 #07132955)}
+.walker svg{display:block;width:100%;height:100%;image-rendering:pixelated}
+.walker-shadow{position:absolute;left:27%;right:27%;height:10%;bottom:0;background:#18182a50;border-radius:50%;transform:scaleX(1.18)}
+.walker-name{position:absolute;top:100%;left:50%;transform:translateX(-50%);padding:1px 6px;border:1px solid #84d6bf99;border-radius:3px;background:#172b31e8;box-shadow:0 2px 0 #10152f77;color:#aeffe2;font-size:12px;line-height:1.5;font-weight:700;white-space:nowrap}
+.walker.walking .walker-figure{animation:walker-step .24s steps(2,end) infinite}
+.walk-target{position:absolute;z-index:3;transform:translate(-50%,-50%);width:22px;height:12px;border:2px solid #aeffe2bd;border-radius:50%;background:#83e2c522;pointer-events:none;animation:walk-target-pulse .65s steps(4,end) infinite}
+.walk-target::after{content:"";position:absolute;inset:3px;border:1px solid #d9ffed75;border-radius:50%}
+.walk-target[hidden]{display:none}
+@keyframes walker-step{0%,100%{transform:scaleX(var(--walk-direction)) translateY(0) rotate(-2deg)}50%{transform:scaleX(var(--walk-direction)) translateY(-3px) rotate(2deg)}}
+@keyframes walk-target-pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@media(max-width:650px){.walker{width:47px;height:47px}.walker-name{font-size:11px;padding:0 5px}.walk-target{width:18px;height:10px}}
+@media(prefers-reduced-motion:reduce){.walker.walking .walker-figure,.walk-target{animation:none}}

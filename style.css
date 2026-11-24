@@ -8,7 +8,7 @@ button{cursor:pointer;color:var(--ink);background:#343d5b;border:2px solid var(-
 button:hover{background:#465071}
 button:active{transform:translateY(2px);box-shadow:0 1px 0 var(--edge)}
 button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--yellow);outline-offset:4px}
-button:disabled{opacity:.45;cursor:default}
+button:disabled{opacity:.45;cursor:default}  /* 조사 비활성화 상태에서도 가구 외형 유지 */ .object[data-act="search"]:disabled {     opacity: 1;     pointer-events: none; }
 button.primary{background:var(--mint);color:#142d2b}
 button.primary:hover{background:#a3efd8}
 button.purple{background:var(--purple);color:#24213c}

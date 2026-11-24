@@ -172,6 +172,13 @@
     }
     if(discoveryItem)objects+=acquired(discoveryItem);
     $('objects').innerHTML = objects;
+    if (state.stage === 1 && !state.roomExitChecked) {
+    $('objects')
+        .querySelectorAll('button[data-act="search"]')
+        .forEach(button => {
+            button.disabled = true;
+        });
+}
     $('party-confetti').hidden = !state.revealed || state.stage < 4;
     $('board').classList.toggle('dark',state.stage===3);
     $('board').classList.toggle('torch',state.stage===3&&state.torchOn);
@@ -191,7 +198,7 @@
   function nearbyObject() {
     if(!movement)return;
     const p=movement.position();
-    const nearest=Array.from($('objects').querySelectorAll('button[data-act]')).map(el=>({el,d:Math.hypot((Number(el.dataset.walkX)-p.x)*1.5,Number(el.dataset.walkY)-p.y)})).sort((a,b)=>a.d-b.d)[0];
+    const nearest=Array.from($('objects').querySelectorAll('button[data-act]:not(:disabled)')).map(el=>({el,d:Math.hypot((Number(el.dataset.walkX)-p.x)*1.5,Number(el.dataset.walkY)-p.y)})).sort((a,b)=>a.d-b.d)[0];
     if(nearest&&nearest.d<19)handle(nearest.el.dataset.act,nearest.el.dataset.value||'');
     else say('규석','조금 더 가까이 가 볼까?');
   }
@@ -243,11 +250,11 @@
   }
   function meetUsagi() {
     talk([['우사기','하아?'],['규석','뭐야 뚱뚱한 토끼가 현관문을 막고 있잖아?!']],()=>{
-      state.roomExitChecked=true;save();ambient();
+      state.roomExitChecked=true;render();ambient();
     });
   }
   function searchFurniture(name) {
-    if (state.stage!==1) return;
+    if (state.stage!==1 || !state.roomExitChecked) return;
     if (state.searched.length!==2||state.searched.includes(name))sound('inspect');
     if (state.snail) return say('규석',name+'은(는) 이미 샅샅이 뒤져봤다. 전보벌레로 전화를 걸어보자.',[['전보벌레 사용','call','','primary']]);
     if (state.searched.includes(name)) return say('규석','여기는 아까 뒤져봤어. 다른 곳을 찾아보자!');
